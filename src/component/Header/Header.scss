@@ -7,19 +7,21 @@
   justify-content: space-between;
   align-items: center;
 
-  button {
+  img {
     margin: 0 10px;
     padding: 5px;
+    width: 20px;
+    height: 20px;
     border-radius: 4px;
     cursor: pointer;
     border: none;
     background: none;
     background-color: #ececec;
   }
-  button:hover {
+  img:hover {
     background-color: darken(#ececec, 5%);
   }
-  button:active {
+  img:active {
     background-color: darken(#ececec, 15%);
   }
 }
