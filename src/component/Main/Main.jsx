@@ -15,9 +15,6 @@ const Main = ({ items, hidden, setHidden, options, setItems }) => {
     if (item.id !== -1) {
       setItems(items.splice(item.id - 1, 1));
     }
-
-    // setItems([...items.slice(0, item.id), ...items.slice(item.id + 1)]);
-    // setItems(item.filter((p) => p !== item));
   };
 
   return (
