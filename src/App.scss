@@ -16,7 +16,7 @@
     width: 100%;
     .main {
       .body_item {
-        height: 7vh;
+        min-height: 5vh;
 
         img {
           margin-top: 5px;
@@ -37,7 +37,7 @@
       }
     }
     .list_body_today {
-      height: 30px;
+      min-height: 30px;
       display: flex;
       align-items: center;
       margin: 0 auto;
