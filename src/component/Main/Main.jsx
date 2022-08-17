@@ -17,7 +17,6 @@ const Main = ({ items, hidden, setHidden, options, setItems }) => {
       setItems(items.splice(index, 1));
     }
   };
-
   return (
     <main className="main">
       <div className="table_head">
@@ -38,7 +37,7 @@ const Main = ({ items, hidden, setHidden, options, setItems }) => {
                 <div className="body_item_today">
                   <div>{item.today}</div>
                 </div>
-                <div style={{ display: "flex" }}>
+                <div className="body_item_yesterday">
                   <div style={{ marginRight: "10px" }}>{item.yesterday}</div>
                   <div className={item.percent > 0 ? "precent_green" : "precent_red"}>{`${item.percent}%`}</div>
                 </div>
@@ -48,15 +47,20 @@ const Main = ({ items, hidden, setHidden, options, setItems }) => {
                 <div className="body_list" onClick={(e) => e.stopPropagation()}>
                   <Line
                     data={{
-                      labels: [1, 2, 3],
+                      labels: [
+                        Object.keys(item).splice(2, 1),
+                        Object.keys(item).splice(3, 1),
+                        Object.keys(item).splice(5, 1),
+                      ],
                       datasets: [
                         {
                           label: item.name,
                           data: [item.today, item.yesterday, item.weeks],
-                          backgroundColor: [`#${Math.random().toString(16).substring(2, 8)}`],
+                          backgroundColor: ["#ffffff"],
+                          borderColor: [`#${Math.random().toString(16).substring(2, 8)}`],
                           borderWidth: 2,
+                          fill: false,
                           lineTension: 0.3,
-                          pointBorderWidth: 4,
                         },
                       ],
                     }}

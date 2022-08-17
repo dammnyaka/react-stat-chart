@@ -10,13 +10,19 @@
 .precent_green {
   color: green;
 }
-.list_container {
+.list_body {
   text-align: center;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-column-gap: 10px;
+  align-items: center;
 }
-.list_today {
+.list_body_today {
   background-color: rgba(0, 217, 255, 0.295);
+}
+
+.list_body_yesterday {
+  display: flex;
+  justify-content: center;
 }

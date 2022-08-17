@@ -7,6 +7,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-column-gap: 10px;
+  text-align: center;
 }
 .body_item {
   background-color: rgb(240, 240, 240, 0.5);
@@ -18,6 +19,7 @@
   grid-column-gap: 6px;
   padding: 4px;
   height: 4vh;
+  text-align: center;
 
   img {
     width: 20px;
@@ -42,6 +44,10 @@
   div {
     margin: 12px auto;
   }
+}
+.body_item_yesterday {
+  display: flex;
+  justify-content: center;
 }
 .body_item:hover {
   background-color: rgb(240, 240, 240);
