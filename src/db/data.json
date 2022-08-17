@@ -1,0 +1,215 @@
+[
+  {
+    "id": 1,
+    "name": "Выручка",
+    "today": 500521,
+    "yesterday": 480521,
+    "percent": -4,
+    "weeks": 123321,
+    "lists": [
+      {
+        "listid": 1,
+        "name": "Наличные",
+        "today": 300000,
+        "yesterday": 480521,
+        "percent": -4,
+        "weeks": 123321
+      },
+      {
+        "listid": 2,
+        "name": "Безналичный расчет",
+        "today": 100000,
+        "yesterday": 480521,
+        "percent": -4,
+        "weeks": 123321
+      },
+      {
+        "listid": 3,
+        "name": "Кредитные карты",
+        "today": 100521,
+        "yesterday": 480521,
+        "percent": -4,
+        "weeks": 123321
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Средний чек",
+    "today": 324876,
+    "yesterday": 480521,
+    "percent": 44,
+    "weeks": 390384,
+    "lists": [
+      {
+        "listid": 1,
+        "name": "Наличные",
+        "today": 300000,
+        "yesterday": 480521,
+        "percent": -4,
+        "weeks": 123321
+      },
+      {
+        "listid": 2,
+        "name": "Безналичный расчет",
+        "today": 100000,
+        "yesterday": 480521,
+        "percent": -4,
+        "weeks": 123321
+      },
+      {
+        "listid": 3,
+        "name": "Кредитные карты",
+        "today": 100521,
+        "yesterday": 480521,
+        "percent": -4,
+        "weeks": 123321
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Средний гость",
+    "today": 429389,
+    "yesterday": 123738,
+    "percent": 34,
+    "weeks": 539899,
+    "lists": [
+      {
+        "listid": 1,
+        "name": "Наличные",
+        "today": 300000,
+        "yesterday": 480521,
+        "percent": -4,
+        "weeks": 123321
+      },
+      {
+        "listid": 2,
+        "name": "Безналичный расчет",
+        "today": 100000,
+        "yesterday": 480521,
+        "percent": -4,
+        "weeks": 123321
+      },
+      {
+        "listid": 3,
+        "name": "Кредитные карты",
+        "today": 100521,
+        "yesterday": 480521,
+        "percent": -4,
+        "weeks": 123321
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Удаления из чека",
+    "today": 500521,
+    "yesterday": 480521,
+    "percent": -4,
+    "weeks": 123321,
+    "lists": [
+      {
+        "listid": 1,
+        "name": "Наличные",
+        "today": 300000,
+        "yesterday": 480521,
+        "percent": -4,
+        "weeks": 123321
+      },
+      {
+        "listid": 2,
+        "name": "Безналичный расчет",
+        "today": 100000,
+        "yesterday": 480521,
+        "percent": -4,
+        "weeks": 123321
+      },
+      {
+        "listid": 3,
+        "name": "Кредитные карты",
+        "today": 100521,
+        "yesterday": 480521,
+        "percent": 4,
+        "weeks": 123321
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Удаления из счета",
+    "today": 500521,
+    "yesterday": 480521,
+    "percent": -12,
+    "weeks": 123321,
+    "lists": [
+      {
+        "listid": 1,
+        "name": "Наличные",
+        "today": 300000,
+        "yesterday": 480521,
+        "percent": -40,
+        "weeks": 123321
+      },
+      {
+        "listid": 2,
+        "name": "Безналичный расчет",
+        "today": 100000,
+        "yesterday": 480521,
+        "percent": 34,
+        "weeks": 123321
+      },
+      {
+        "listid": 3,
+        "name": "Кредитные карты",
+        "today": 100521,
+        "yesterday": 480521,
+        "percent": -4,
+        "weeks": 123321
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Количество чеков",
+    "today": 500521,
+    "yesterday": 480521,
+    "percent": -4,
+    "weeks": 123321,
+    "lists": [
+      {
+        "listid": 1,
+        "name": "Наличные",
+        "today": 300000,
+        "yesterday": 480521,
+        "percent": -4,
+        "weeks": 123321
+      },
+      {
+        "listid": 2,
+        "name": "Безналичный расчет",
+        "today": 100000,
+        "yesterday": 480521,
+        "percent": -4,
+        "weeks": 123321
+      },
+      {
+        "listid": 3,
+        "name": "Кредитные карты",
+        "today": 100521,
+        "yesterday": 480521,
+        "percent": -4,
+        "weeks": 123321
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Количество гостей",
+    "today": 500521,
+    "yesterday": 480521,
+    "percent": -4,
+    "weeks": 123321,
+    "lists": [{}]
+  }
+]

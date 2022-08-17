@@ -1,0 +1,46 @@
+.main {
+  padding: 5px;
+  margin-top: 10px;
+  background-color: #ffffff;
+}
+.table_head {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 10px;
+}
+.body_item {
+  background-color: rgb(240, 240, 240, 0.5);
+  margin: 4px 0;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  grid-column-gap: 6px;
+  padding: 4px;
+  height: 4vh;
+}
+.body_item_today {
+  background-color: rgba(0, 217, 255, 0.295);
+  text-align: center;
+  div {
+    margin: 12px auto;
+  }
+}
+.body_item:hover {
+  background-color: rgb(240, 240, 240);
+}
+.body_list {
+  opacity: 1;
+}
+
+.precent_red {
+  color: red;
+}
+.precent_green {
+  color: green;
+}
+
+.remove {
+  position: relative;
+  top: -16px;
+}
