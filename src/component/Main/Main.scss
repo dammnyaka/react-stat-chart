@@ -18,6 +18,23 @@
   grid-column-gap: 6px;
   padding: 4px;
   height: 4vh;
+
+  img {
+    width: 20px;
+    height: 20px;
+    background-color: #ff0000;
+    border-radius: 4px;
+  }
+  img:hover {
+    background-color: darken(#ff0000, 10%);
+  }
+  img:active {
+    background-color: darken(#ff0000, 15%);
+  }
+}
+.body_name {
+  display: flex;
+  justify-content: space-between;
 }
 .body_item_today {
   background-color: rgba(0, 217, 255, 0.295);
@@ -38,9 +55,4 @@
 }
 .precent_green {
   color: green;
-}
-
-.remove {
-  position: relative;
-  top: -16px;
 }
