@@ -9,7 +9,7 @@ function App() {
   const [items, setItems] = useState();
   const [close, setClose] = useState(false);
   const [hidden, setHidden] = useState();
-  const [setting, setOptions] = useState(false);
+  const [options, setOptions] = useState(false);
 
   useEffect(() => {
     setItems(db);
@@ -18,8 +18,8 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <Header setClose={setClose} close={close} setOptions={setOptions} options={setting} />
-        {close && <Main items={items} setItems={setItems} hidden={hidden} setHidden={setHidden} options={setting} />}
+        <Header setClose={setClose} close={close} setOptions={setOptions} options={options} />
+        {close && <Main items={items} setItems={setItems} hidden={hidden} setHidden={setHidden} options={options} />}
       </div>
     </div>
   );

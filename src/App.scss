@@ -14,5 +14,45 @@
 @media screen and (max-width: 600px) {
   .container {
     width: 100%;
+    .main {
+      .body_item {
+        height: 7vh;
+
+        img {
+          margin-top: 5px;
+          width: 18px;
+          height: 18px;
+          padding: 1px 10px;
+        }
+      }
+      .body_item_today {
+        width: 60px;
+        margin: 0 auto;
+      }
+      .body_name {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 80px;
+      }
+    }
+    .list_body_today {
+      height: 30px;
+      display: flex;
+      align-items: center;
+      margin: 0 auto;
+    }
+    .list_body_name {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 80px;
+    }
+    .list_body_yesterday {
+      align-items: center;
+      div:nth-of-type(2) {
+        width: 40px;
+      }
+    }
   }
 }
