@@ -1,9 +1,9 @@
-import React from "react";
+import React, { memo } from "react";
 import "./List.scss";
 
 const List = ({ list }) => {
   return (
-    <div className="list" key={list.id}>
+    <li className="list" key={list.id}>
       {list.percent && (
         <div className="list_body">
           <div className="list_body_name">{list.name}</div>
@@ -15,8 +15,8 @@ const List = ({ list }) => {
           <div>{list.weeks}</div>
         </div>
       )}
-    </div>
+    </li>
   );
 };
 
-export default List;
+export default memo(List);

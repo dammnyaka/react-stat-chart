@@ -2,13 +2,17 @@
   padding: 5px;
   margin-top: 10px;
   background-color: #ffffff;
+  overflow: hidden;
 }
+
 .table_head {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-column-gap: 10px;
   text-align: center;
+  background-color: white;
 }
+
 .body_item {
   background-color: rgb(240, 240, 240, 0.5);
   margin: 4px 0;
@@ -34,10 +38,12 @@
     background-color: darken(#ff0000, 15%);
   }
 }
-.body_name {
+
+.body_item_name {
   display: flex;
   justify-content: space-between;
 }
+
 .body_item_today {
   background-color: rgba(0, 217, 255, 0.295);
   height: 100%;
@@ -45,13 +51,20 @@
   align-items: center;
   justify-content: center;
 }
+
 .body_item_yesterday {
   display: flex;
   justify-content: center;
+
+  div:nth-of-type(1) {
+    margin: 0 10px;
+  }
 }
+
 .body_item:hover {
   background-color: rgb(240, 240, 240);
 }
+
 .body_list {
   opacity: 1;
 }
@@ -59,6 +72,7 @@
 .precent_red {
   color: red;
 }
+
 .precent_green {
   color: green;
 }

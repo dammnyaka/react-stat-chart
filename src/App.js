@@ -8,7 +8,7 @@ import { useEffect } from "react";
 function App() {
   const [items, setItems] = useState();
   const [close, setClose] = useState(false);
-  const [hidden, setHidden] = useState();
+  const [hiddenItems, setHiddenItems] = useState();
   const [options, setOptions] = useState(false);
 
   useEffect(() => {
@@ -19,7 +19,15 @@ function App() {
     <div className="App">
       <div className="container">
         <Header setClose={setClose} close={close} setOptions={setOptions} options={options} />
-        {close && <Main items={items} setItems={setItems} hidden={hidden} setHidden={setHidden} options={options} />}
+        {close && (
+          <Main
+            items={items}
+            setItems={setItems}
+            hiddenItems={hiddenItems}
+            setHiddenItems={setHiddenItems}
+            options={options}
+          />
+        )}
       </div>
     </div>
   );

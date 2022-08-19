@@ -4,12 +4,6 @@
   padding: 4px;
 }
 
-.precent_red {
-  color: red;
-}
-.precent_green {
-  color: green;
-}
 .list_body {
   text-align: center;
   width: 100%;
@@ -17,6 +11,7 @@
   grid-template-columns: repeat(4, 1fr);
   align-items: center;
 }
+
 .list_body_today {
   background-color: rgba(0, 217, 255, 0.295);
 }
@@ -24,4 +19,12 @@
 .list_body_yesterday {
   display: flex;
   justify-content: center;
+}
+
+.precent_red {
+  color: red;
+}
+
+.precent_green {
+  color: green;
 }
