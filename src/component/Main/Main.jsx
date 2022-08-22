@@ -1,28 +1,18 @@
-import React from "react";
 import List from "../List/List";
 import "./Main.scss";
 import removeIcon from "../../icon/remove.png";
 import Charts from "../Chart/Charts";
-import { useRef } from "react";
+import { OPEN_ITEM, REMOVE_ITEM } from "../../store/ActionType";
 
-const Main = ({ items, hiddenItems, setHiddenItems, options, setItems }) => {
-  const myRef = useRef();
-  const handleClick = (item, e) => {
-    // let top = window.innerHeight / 2;
-    // myRef.current.scrollIntoView({ block: "nearest", behavior: "smooth", inline: "center" });
-    // window.scrollTo(0, myRef.current.offsetTop + top);
-    // e.currentTarget.scrollIntoView({ block: "start", behavior: "smooth" });
-    // console.log(e.target);
-    // console.log(myRef.current.offsetTop);
-    // console.log(window.innerHeight);
-    setHiddenItems(item.id !== hiddenItems ? item.id : null);
-    e.currentTarget.scrollIntoView({ block: "end", behavior: "smooth" });
+const Main = ({ state, dispatch }) => {
+  const handleClick = (item) => {
+    dispatch({ type: OPEN_ITEM, item: item.id });
   };
 
-  const remove = (item, e, index) => {
+  const remove = (item, e) => {
     e.stopPropagation();
     if (item.id) {
-      setItems(items.splice(index, 1));
+      dispatch({ type: REMOVE_ITEM, remove: item.id });
     }
   };
   return (
@@ -34,13 +24,13 @@ const Main = ({ items, hiddenItems, setHiddenItems, options, setItems }) => {
         <li>Эта неделя</li>
       </ul>
       <ul className="table_body">
-        {items &&
-          items.map((item, index) => (
-            <li ref={myRef} className="body" key={item.id} onClick={(e) => handleClick(item, e)}>
+        {state.items.length > 0 &&
+          state.items.map((item) => (
+            <li className="body" key={item.id} onClick={(e) => handleClick(item)}>
               <div className="body_item">
                 <div className="body_item_name">
                   <div>{item.name}</div>
-                  {options && <img onClick={(e) => remove(item, e, index)} src={removeIcon} alt="remove" />}
+                  {state.optionItems && <img onClick={(e) => remove(item, e)} src={removeIcon} alt="remove" />}
                 </div>
                 <div className="body_item_today">
                   <div>{item.today}</div>
@@ -51,11 +41,11 @@ const Main = ({ items, hiddenItems, setHiddenItems, options, setItems }) => {
                 </div>
                 <div>{item.weeks}</div>
               </div>
-              {hiddenItems === item.id && (
+              {state.openItem === item.id && (
                 <ul className="body_list" onClick={(e) => e.stopPropagation()}>
                   <Charts item={item} />
                   {item.lists.map((list) => (
-                    <List key={list.id} list={list} />
+                    <List key={list.listid} list={list} />
                   ))}
                 </ul>
               )}

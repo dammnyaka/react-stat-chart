@@ -2,7 +2,7 @@ import * as ActionTypes from "./ActionType";
 
 export const INITIAL_STATE = {
   items: {},
-  hiddenItem: {},
+  openItem: {},
   closeItems: false,
   optionItems: false,
 };
@@ -19,10 +19,10 @@ export const reducer = (state, action) => {
         ...state,
         items: state.items.filter((item) => item.id !== action.remove),
       };
-    case ActionTypes.HIDDEN_ITEM:
+    case ActionTypes.OPEN_ITEM:
       return {
         ...state,
-        hiddenItem: action.item !== state.hiddenItem ? action.item : null,
+        openItem: action.item !== state.openItem ? action.item : null,
       };
     case ActionTypes.CLOSE_ITEMS:
       return {

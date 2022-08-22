@@ -2,49 +2,21 @@ import Header from "./component/Header/Header";
 import Main from "./component/Main/Main";
 import "./App.scss";
 import db from "./db/data.json";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useEffect, useReducer } from "react";
+import { INITIAL_STATE, reducer } from "./store/reducer";
+import { SUCCESS_ITEMS } from "./store/ActionType";
 
 function App() {
-  const [items, setItems] = useState();
-  const [close, setClose] = useState(false);
-  const [hiddenItems, setHiddenItems] = useState();
-  const [options, setOptions] = useState(false);
-
+  const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
   useEffect(() => {
-    // setItems(db);
-    const f = async () => {
-      await setItems(db);
-      const interval = setInterval(() => {
-        setItems(db);
-        console.log("sub");
-      }, 5000);
-    };
-
-    // const interval = setInterval(() => {
-    //   setItems(db);
-    //   console.log("sub");
-    // }, 5000);
-
-    return () => {
-      // console.log("clear");
-      // clearInterval(interval);
-    };
-  }, [items]);
+    dispatch({ type: SUCCESS_ITEMS, payload: db });
+  }, []);
 
   return (
     <div className="App">
       <div className="container">
-        <Header setClose={setClose} close={close} setOptions={setOptions} options={options} />
-        {close && (
-          <Main
-            items={items}
-            setItems={setItems}
-            hiddenItems={hiddenItems}
-            setHiddenItems={setHiddenItems}
-            options={options}
-          />
-        )}
+        <Header state={state} dispatch={dispatch} />
+        {state.closeItems && <Main state={state} dispatch={dispatch} />}
       </div>
     </div>
   );
