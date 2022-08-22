@@ -15,6 +15,11 @@ const Main = ({ state, dispatch }) => {
       dispatch({ type: REMOVE_ITEM, remove: item.id });
     }
   };
+
+  const difference = (today, yesterday) => {
+    return ((yesterday - today) * 100) / yesterday;
+  };
+
   return (
     <main className="main">
       <ul className="table_head">
@@ -37,7 +42,9 @@ const Main = ({ state, dispatch }) => {
                 </div>
                 <div className="body_item_yesterday">
                   <div>{item.yesterday}</div>
-                  <div className={item.percent > 0 ? "precent_green" : "precent_red"}>{`${item.percent}%`}</div>
+                  <div
+                    className={difference(item.today, item.yesterday) > 0 ? "precent_green" : "precent_red"}
+                  >{`${difference(item.today, item.yesterday).toFixed(0)}%`}</div>
                 </div>
                 <div>{item.weeks}</div>
               </div>

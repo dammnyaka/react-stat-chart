@@ -210,6 +210,6 @@
     "yesterday": 480521,
     "percent": -4,
     "weeks": 123321,
-    "lists": [{}]
+    "lists": [{ "listid": 1 }]
   }
 ]

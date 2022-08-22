@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <Header state={state.openItems} dispatch={dispatch} />
+        <Header openItems={state.openItems} dispatch={dispatch} />
         {state.openItems && <Main state={state} dispatch={dispatch} />}
       </div>
     </div>
