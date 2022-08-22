@@ -3,10 +3,20 @@ import List from "../List/List";
 import "./Main.scss";
 import removeIcon from "../../icon/remove.png";
 import Charts from "../Chart/Charts";
+import { useRef } from "react";
 
 const Main = ({ items, hiddenItems, setHiddenItems, options, setItems }) => {
+  const myRef = useRef();
   const handleClick = (item, e) => {
-    setHiddenItems(item.id !== hiddenItems ? item.id : "");
+    // let top = window.innerHeight / 2;
+    // myRef.current.scrollIntoView({ block: "nearest", behavior: "smooth", inline: "center" });
+    // window.scrollTo(0, myRef.current.offsetTop + top);
+    // e.currentTarget.scrollIntoView({ block: "start", behavior: "smooth" });
+    // console.log(e.target);
+    // console.log(myRef.current.offsetTop);
+    // console.log(window.innerHeight);
+    setHiddenItems(item.id !== hiddenItems ? item.id : null);
+    e.currentTarget.scrollIntoView({ block: "end", behavior: "smooth" });
   };
 
   const remove = (item, e, index) => {
@@ -26,7 +36,7 @@ const Main = ({ items, hiddenItems, setHiddenItems, options, setItems }) => {
       <ul className="table_body">
         {items &&
           items.map((item, index) => (
-            <li className="body" key={item.id} onClick={(e) => handleClick(item, e)}>
+            <li ref={myRef} className="body" key={item.id} onClick={(e) => handleClick(item, e)}>
               <div className="body_item">
                 <div className="body_item_name">
                   <div>{item.name}</div>

@@ -12,7 +12,24 @@ function App() {
   const [options, setOptions] = useState(false);
 
   useEffect(() => {
-    setItems(db);
+    // setItems(db);
+    const f = async () => {
+      await setItems(db);
+      const interval = setInterval(() => {
+        setItems(db);
+        console.log("sub");
+      }, 5000);
+    };
+
+    // const interval = setInterval(() => {
+    //   setItems(db);
+    //   console.log("sub");
+    // }, 5000);
+
+    return () => {
+      // console.log("clear");
+      // clearInterval(interval);
+    };
   }, [items]);
 
   return (
