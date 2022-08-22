@@ -2,14 +2,14 @@ import List from "../List/List";
 import "./Main.scss";
 import removeIcon from "../../icon/remove.png";
 import Charts from "../Chart/Charts";
-import { OPEN_ITEM, REMOVE_ITEM } from "../../store/ActionType";
+import { OPEN_LIST, REMOVE_ITEM } from "../../store/ActionType";
 
 const Main = ({ state, dispatch }) => {
-  const handleClick = (item) => {
-    dispatch({ type: OPEN_ITEM, item: item.id });
+  const openLIst = (item) => {
+    dispatch({ type: OPEN_LIST, item: item.id });
   };
 
-  const remove = (item, e) => {
+  const removeItem = (item, e) => {
     e.stopPropagation();
     if (item.id) {
       dispatch({ type: REMOVE_ITEM, remove: item.id });
@@ -26,11 +26,11 @@ const Main = ({ state, dispatch }) => {
       <ul className="table_body">
         {state.items.length > 0 &&
           state.items.map((item) => (
-            <li className="body" key={item.id} onClick={(e) => handleClick(item)}>
+            <li className="body" key={item.id} onClick={(e) => openLIst(item)}>
               <div className="body_item">
                 <div className="body_item_name">
                   <div>{item.name}</div>
-                  {state.optionItems && <img onClick={(e) => remove(item, e)} src={removeIcon} alt="remove" />}
+                  {state.optionItems && <img onClick={(e) => removeItem(item, e)} src={removeIcon} alt="remove" />}
                 </div>
                 <div className="body_item_today">
                   <div>{item.today}</div>
@@ -41,7 +41,7 @@ const Main = ({ state, dispatch }) => {
                 </div>
                 <div>{item.weeks}</div>
               </div>
-              {state.openItem === item.id && (
+              {state.openList === item.id && (
                 <ul className="body_list" onClick={(e) => e.stopPropagation()}>
                   <Charts item={item} />
                   {item.lists.map((list) => (

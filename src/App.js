@@ -8,6 +8,7 @@ import { SUCCESS_ITEMS } from "./store/ActionType";
 
 function App() {
   const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
+
   useEffect(() => {
     dispatch({ type: SUCCESS_ITEMS, payload: db });
   }, []);
@@ -15,8 +16,8 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <Header state={state} dispatch={dispatch} />
-        {state.closeItems && <Main state={state} dispatch={dispatch} />}
+        <Header state={state.openItems} dispatch={dispatch} />
+        {state.openItems && <Main state={state} dispatch={dispatch} />}
       </div>
     </div>
   );
